@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mohan Krishna Namburu - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #e9eff3;
+      color: #222;
+    }
+    .header {
+      background: #2c3e50;
+      height: 180px;
+    }
+    .profile {
+      background: #ffffff;
+      padding: 30px;
+      margin: -80px auto 20px;
+      width: 85%;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .profile-info h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: 800;
+      color: #2c3e50;
+    }
+    .profile-info p {
+      margin: 6px 0;
+      font-size: 16px;
+      color: #4a4a4a;
+    }
+    .main {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+    .sidebar {
+      width: 200px;
+      background: #34495e;
+      border-radius: 10px;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .sidebar button {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 12px 0;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .sidebar button:hover {
+      background: #3d5a73;
+    }
+    .content {
+      flex: 1;
+      margin-left: 25px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .content h2 {
+      margin-top: 0;
+      color: #2c3e50;
+      font-size: 24px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h3 {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+    .section p, .section li {
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .section ul {
+      padding-left: 20px;
+    }
+    .tags span {
+      display: inline-block;
+      background: #d9e3ec;
+      color: #333;
+      padding: 6px 12px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    .pursuits {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .pursuit-card {
+      background: #f4f7fa;
+      border: 1px solid #ccd6dd;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1;
+      min-width: 250px;
+    }
+    .pursuit-card h4 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .contact p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header"></div>
+
+  <div class="profile" style="text-align: center;">
+    <div class="profile-info">
+      <h1 style="font-size: 28px; color: #1e2a38; margin-bottom: 5px;">Mohan Krishna Namburu</h1>
+      <p style="font-size: 18px; font-weight: 500; color: #37474f; margin: 0;">
+        Developer <span style="color: #3bb4f1;">|</span> AI & Data Science Enthusiast
+      </p>
+      <p style="font-size: 15px; color: #546e7a; margin-top: 6px;">
+        Guntur, Andhra Pradesh <span style="color: #b0bec5;">|</span> +91-8333829406 <span style="color: #b0bec5;">|</span> mohannamburu1343@gmail.com
+      </p>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('resume')">Resume</button>
+      <button onclick="showSection('certs')">Certificates</button>
+      <button onclick="showSection('contact')">Contact</button>
+    </div>
+    <div class="content" id="about">
+      <h2>About Me</h2>
+      <p>Motivated and detail-oriented B.Tech student specializing in Artificial Intelligence and Data Science, with a strong foundation in Data Structures, Algorithms, and Full-Stack Development.</p>
+      <div class="section">
+        <h3>Current Pursuits</h3>
+        <div class="pursuits">
+          <div class="pursuit-card">
+            <h4>AI & ML</h4>
+            <p>Captivated by the power of AI and ML to solve real-world problems through innovative solutions.</p>
+          </div>
+          <div class="pursuit-card">
+            <h4>Web Development</h4>
+            <p>Dedicated to crafting beautiful, scalable web solutions that enhance user experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="resume" style="display:none;">
+      <h2>Resume</h2>
+      <div class="section">
+        <h3>Education</h3>
+        <p><strong>SASTRA Deemed University</strong> – B.Tech (AI & DS) – 2022–2026 – CGPA: 7.56</p>
+        <p><strong>Vidwan Junior College</strong> – Intermediate (MPC) – 2020–2022 – 96.8%</p>
+        <p><strong>Bhashyam High School</strong> – SSC – 2019–2020 – 97.6%</p>
+      </div>
+      <div class="section">
+        <h3>Technical Skills</h3>
+        <div class="tags">
+          <span>Python</span><span>C++</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span><span>Django</span><span>MongoDB</span><span>Git</span><span>VS Code</span><span>DSA</span><span>OOP</span>
+        </div>
+      </div>
+      <div class="section">
+        <h3>Projects</h3>
+        <ul>
+          <li><strong>Smart Employee Monitoring System</strong> – Python, OpenCV, ML, SQL</li>
+          <li><strong>E-Hospital Management System</strong> – HTML, CSS, JS, SQL</li>
+          <li><strong>Cricket Info Website</strong> – Python (Django)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content" id="certs" style="display:none;">
+      <h2>Certificates</h2>
+      <ul>
+        <li>Coursera – Machine Learning for Beginners</li>
+        <li>Internshala – Online Java and Python Training</li>
+        <li>Scaler Academy – C & C++ Programming</li>
+        <li>GrowthNinja - IIT Bombay – Java Library Management</li>
+      </ul>
+    </div>
+    <div class="content" id="contact" style="display:none;">
+      <h2>Contact</h2>
+      <div class="contact">
+        <p><strong>Phone:</strong> +91-8333829406</p>
+        <p><strong>Email:</strong> mohannamburu1343@gmail.com</p>
+        <p><strong>Location:</strong> Guntur, Andhra Pradesh, India</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
