@@ -6,49 +6,98 @@
   <title>Mohan Krishna Namburu - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --bg: #e9eff3;
+      --text: #222;
+      --primary: #2c3e50;
+      --secondary: #34495e;
+      --card: #ffffff;
+      --highlight: #3bb4f1;
+    }
+
+    body.dark {
+      --bg: #1a1a1a;
+      --text: #f5f5f5;
+      --primary: #ececec;
+      --secondary: #2a2f3a;
+      --card: #2e2e2e;
+      --highlight: #03a9f4;
+    }
+
     * {
       box-sizing: border-box;
     }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: #e9eff3;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
     }
     .header {
-      background: #2c3e50;
+      background: var(--primary);
       height: 180px;
     }
     .profile {
-      background: #ffffff;
+      background: var(--card);
       padding: 30px;
       margin: -80px auto 20px;
-      width: 85%;
+      width: 90%;
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
     .profile-info h1 {
       margin: 0;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 800;
-      color: #2c3e50;
+      color: var(--primary);
     }
     .profile-info p {
       margin: 6px 0;
       font-size: 16px;
       color: #4a4a4a;
     }
+    .dark .profile-info p {
+      color: #ccc;
+    }
+    .download-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: var(--highlight);
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .dark-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
     .main {
       display: flex;
       max-width: 1200px;
       margin: 0 auto 40px;
+      flex-wrap: wrap;
     }
     .sidebar {
-      width: 200px;
-      background: #34495e;
+      width: 100%;
+      max-width: 200px;
+      background: var(--secondary);
       border-radius: 10px;
       padding: 20px 0;
       text-align: center;
+      flex-shrink: 0;
     }
     .sidebar button {
       display: block;
@@ -68,14 +117,15 @@
     .content {
       flex: 1;
       margin-left: 25px;
-      background: #ffffff;
+      background: var(--card);
       border-radius: 10px;
       padding: 30px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      width: calc(100% - 225px);
     }
     .content h2 {
       margin-top: 0;
-      color: #2c3e50;
+      color: var(--primary);
       font-size: 24px;
       border-bottom: 2px solid #ddd;
       padding-bottom: 10px;
@@ -120,25 +170,38 @@
     }
     .pursuit-card h4 {
       margin-top: 0;
-      color: #2c3e50;
+      color: var(--primary);
     }
     .contact p {
       margin: 8px 0;
     }
+
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+      .sidebar {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+      .content {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
   <div class="header"></div>
 
-  <div class="profile" style="text-align: center;">
+  <div class="profile">
     <div class="profile-info">
-      <h1 style="font-size: 28px; color: #1e2a38; margin-bottom: 5px;">Mohan Krishna Namburu</h1>
-      <p style="font-size: 18px; font-weight: 500; color: #37474f; margin: 0;">
-        Developer <span style="color: #3bb4f1;">|</span> AI & Data Science Enthusiast
-      </p>
-      <p style="font-size: 15px; color: #546e7a; margin-top: 6px;">
-        Guntur, Andhra Pradesh <span style="color: #b0bec5;">|</span> +91-8333829406 <span style="color: #b0bec5;">|</span> mohannamburu1343@gmail.com
-      </p>
+      <h1>Mohan Krishna Namburu</h1>
+      <p>Developer <span style="color: var(--highlight);">|</span> AI & Data Science Enthusiast</p>
+      <p>Guntur, Andhra Pradesh <span style="color: #b0bec5;">|</span> +91-8333829406 <span style="color: #b0bec5;">|</span> mohannamburu1343@gmail.com</p>
+      <a href="resume.pdf" download><button class="download-btn">Download Resume</button></a>
     </div>
   </div>
 
@@ -151,21 +214,22 @@
     </div>
     <div class="content" id="about">
       <h2>About Me</h2>
-      <p>Motivated and detail-oriented B.Tech student specializing in Artificial Intelligence and Data Science, with a strong foundation in Data Structures, Algorithms, and Full-Stack Development.</p>
+      <p>Motivated B.Tech student specializing in AI & DS, with a strong foundation in DSA and Full-Stack Development.</p>
       <div class="section">
         <h3>Current Pursuits</h3>
         <div class="pursuits">
           <div class="pursuit-card">
             <h4>AI & ML</h4>
-            <p>Captivated by the power of AI and ML to solve real-world problems through innovative solutions.</p>
+            <p>Passionate about solving real-world problems using machine learning techniques.</p>
           </div>
           <div class="pursuit-card">
             <h4>Web Development</h4>
-            <p>Dedicated to crafting beautiful, scalable web solutions that enhance user experience.</p>
+            <p>Focused on building clean, scalable web solutions that improve UX.</p>
           </div>
         </div>
       </div>
     </div>
+
     <div class="content" id="resume" style="display:none;">
       <h2>Resume</h2>
       <div class="section">
@@ -177,7 +241,7 @@
       <div class="section">
         <h3>Technical Skills</h3>
         <div class="tags">
-          <span>Python</span><span>C++</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span><span>Django</span><span>MongoDB</span><span>Git</span><span>VS Code</span><span>DSA</span><span>OOP</span>
+          <span>Python</span><span>C++</span><span>SQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>MongoDB</span><span>DSA</span><span>OOPS</span>
         </div>
       </div>
       <div class="section">
@@ -189,15 +253,17 @@
         </ul>
       </div>
     </div>
+
     <div class="content" id="certs" style="display:none;">
       <h2>Certificates</h2>
       <ul>
-        <li>Coursera – Machine Learning for Beginners</li>
+        <li>Coursera – Machine Learning Pipelines with Azure AI Studio</li>
         <li>Internshala – Online Java and Python Training</li>
         <li>Scaler Academy – C & C++ Programming</li>
         <li>GrowthNinja - IIT Bombay – Java Library Management</li>
       </ul>
     </div>
+
     <div class="content" id="contact" style="display:none;">
       <h2>Contact</h2>
       <div class="contact">
@@ -212,6 +278,10 @@
     function showSection(id) {
       document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
       document.getElementById(id).style.display = 'block';
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
     }
   </script>
 </body>
